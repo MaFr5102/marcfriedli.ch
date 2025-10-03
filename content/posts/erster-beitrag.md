@@ -1,5 +1,6 @@
-+++
-date = '2025-10-02T20:52:17+02:00'
-draft = true
-title = 'Erster Beitrag'
-+++
+---
+title: "Erster Beitrag"
+date: 2025-10-03
+---
+
+Willkommen auf meiner neuen Hugo + Blowfish Website!

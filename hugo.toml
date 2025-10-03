@@ -1,3 +1,9 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://mafr5102.github.io/marcfriedli.ch/"
+languageCode = "en-us"
+title = "Blowfish"
+theme = "blowfish"
+enableRobotsTXT = true
+
+# Startseite korrekt anzeigen
+disableKinds = ["sitemap", "taxonomy", "taxonomyTerm"]
+
