@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: MaFr5102/marcfriedli.ch   # dein GitHub-Repo
+  branch: main                     # dein Hauptbranch
+
+media_folder: "public/images"      # Speicherort für Bilder
+public_folder: "/images"           # URL-Pfad zu Bildern
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

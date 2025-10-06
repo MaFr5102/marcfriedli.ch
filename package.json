@@ -7,13 +7,15 @@
   "type": "module",
   "packageManager": "yarn@1.22.22",
   "scripts": {
-    "dev": "yarn generate-json && astro dev",
-    "build": "yarn generate-json && astro build",
+    "dev": "astro dev",
+    "build": "run-s copy-admin build:astro",
+    "build:astro": "astro build",
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier -w ./src",
     "generate-json": "node scripts/jsonGenerator.js",
-    "remove-darkmode": "node scripts/removeDarkmode.js && yarn format"
+    "remove-darkmode": "node scripts/removeDarkmode.js && yarn format",
+    "copy-admin": "cpx \"admin/**/*\" dist/admin"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
@@ -48,6 +50,7 @@
     "@types/react": "19.2.0",
     "@types/react-dom": "19.2.0",
     "eslint": "^9.37.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14",

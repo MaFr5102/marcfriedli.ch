@@ -12,8 +12,9 @@ import config from "./src/config/config.json";
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
-  base: config.site.base_path ? config.site.base_path : "/",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
+  output: "static"
+  base: "/",                   // <--- hier angepasst
+  trailingSlash: "always",      // <--- hier angepasst
   image: { service: sharp() },
   vite: { plugins: [tailwindcss()] },
   integrations: [
@@ -38,3 +39,4 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
 });
+
