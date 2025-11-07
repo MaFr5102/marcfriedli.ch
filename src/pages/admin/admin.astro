@@ -1,0 +1,50 @@
+---
+import { Fragment } from "astro/jsx-runtime";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- ✅ Aktuelle Decap CMS Version -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        background: #f9f9f9;
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // CMS manuell initialisieren, damit config.yml aus /public/admin geladen wird
+      window.CMS_MANUAL_INIT = true;
+
+      window.addEventListener("load", () => {
+        if (window.CMS) {
+          window.CMS.init({
+            config: {
+              backend: {
+                name: "git-gateway",
+                branch: "main", // ggf. anpassen
+              },
+              load_config_file: true, // zieht Einstellungen aus config.yml
+              media_folder: "public/images",
+              public_folder: "/images",
+              site_url: window.location.origin,
+            },
+          });
+        } else {
+          document.body.innerHTML =
+            "<h2 style='padding:2rem;color:#900;'>CMS konnte nicht geladen werden – überprüfe den Script-Link zu decap-cms.js!</h2>";
+        }
+      });
+    </script>
+  </body>
+</html>

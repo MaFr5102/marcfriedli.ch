@@ -1,10 +1,32 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </head>
   <body>
+    <script>
+      // CMS manuell initialisieren, damit config.yml erkannt wird
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script>
+      CMS.init({
+        config: {
+          backend: {
+            name: "git-gateway",
+            branch: "main" // Branch ggf. anpassen
+          },
+          media_folder: "images", // Verwendet vorhandenen images-Ordner
+          public_folder: "/images", // öffentlicher Pfad
+          site_url: window.location.origin,
+          load_config_file: true    // Lädt automatisch die config.yml aus /admin/
+        }
+      });
+    </script>
   </body>
 </html>

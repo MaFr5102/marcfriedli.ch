@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </head>
+  <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+      window.initCMS = function () {
+        CMS.init({
+          config: {
+            backend: {
+              name: "git-gateway",
+              branch: "main",
+            },
+            media_folder: "public/images",
+            public_folder: "/images",
+            site_url: window.location.origin,
+            load_config_file: true,
+          },
+        });
+      };
+    </script>
+    <script>
+      if (window.CMS) {
+        window.initCMS();
+      } else {
+        document.addEventListener("DOMContentLoaded", () => {
+          if (window.CMS) window.initCMS();
+        });
+      }
+    </script>
+  </body>
+</html>
