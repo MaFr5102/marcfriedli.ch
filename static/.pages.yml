@@ -1,0 +1,34 @@
+media:
+  input: static/uploads
+  output: /uploads
+
+content:
+  - name: about
+    label: "Über"
+    type: file
+    path: content/about/_index.md
+    fields:
+      - { name: title, label: Titel, type: string }
+      - { name: body, label: Inhalt, type: rich-text }
+
+  - name: contact
+    label: "Kontakt"
+    type: file
+    path: content/contact/_index.md
+    fields:
+      - { name: title, label: Titel, type: string }
+      - { name: body, label: Inhalt, type: rich-text }
+
+  - name: projects
+    label: "Projekte"
+    type: collection
+    path: content/projects
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Titel, type: string }
+      - { name: date, label: Datum, type: date }
+      - { name: summary, label: Kurzbeschreibung, type: text }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: link, label: Link, type: string }
+      - { name: image, label: Titelbild, type: image }
+      - { name: body, label: Beschreibung, type: rich-text }
