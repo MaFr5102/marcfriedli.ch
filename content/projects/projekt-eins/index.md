@@ -6,5 +6,6 @@ tags:
   - Web
   - Python
 link: https://github.com/MaFr5102/marcfriedli.ch
+image: /uploads/Plakat Saisonausstellung(1).jpg
 ---
 Ausführlicher Text über mein Projekt.
