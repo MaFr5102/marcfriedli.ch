@@ -1,5 +1,5 @@
 ---
 title: "Marc Friedli"
-layout: "profile"
+layout: "background"
 ---
 Hallo, mein Name ist Marc Friedli.

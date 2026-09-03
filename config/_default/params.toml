@@ -65,9 +65,9 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, landing, custom
+  layout = "background" # valid options: page, profile, hero, card, background, landing, custom
   # layoutSwitcher = false # opt-in interactive preview of the built-in layouts
-  #homepageImage = "IMAGE.jpg" # used in: hero, and card
+  homepageImage = "/img/startseite_wolken.png" # used in: hero, and card
   showRecent = false
   showRecentItems = 5
   showMoreLink = false
@@ -75,10 +75,10 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
-  disableHeroImageFilter = false # only used when layout equals hero
+  disableHeroImageFilter = true # only used when layout equals hero
 
 [article]
-  showDate = true
+  showDate = false
   showViews = false
   showLikes = false
   showDateOnlyInArticle = false
@@ -98,7 +98,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
-  showReadingTime = true
+  showReadingTime = false
   showReadingProgress = false
   showTableOfContents = false
   # showRelatedContent = false
@@ -108,7 +108,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   showTags = true # These will show if showTaxonomies is true.
   showCategoriesInSecondaryColor = false # This will change the color of category badges, so the user can better distinguish between the two. Only if showTaxonomies is true.
   showAuthorsBadges = false
-  showWordCount = true
+  showWordCount = false
   # sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram", "line"]
   showZenMode = false
   # externalLinkForceNewTab = false # disable to allow external links in the same tab (defaults to true)
